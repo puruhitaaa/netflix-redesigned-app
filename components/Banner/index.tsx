@@ -20,11 +20,12 @@ const Banner = ({ netflixOriginals }: Props) => {
 
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
-      <section className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
+      <section className="absolute top-0 left-0 -z-10 h-[95vh] w-full">
         <Image
           src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
           layout="fill"
           objectFit="cover"
+          alt={movie?.name || movie?.original_name || movie?.title}
         />
       </section>
 
@@ -37,11 +38,11 @@ const Banner = ({ netflixOriginals }: Props) => {
 
       <section className="flex items-center space-x-3">
         <button className="banner-btn bg-white text-black">
-          <FaPlay size={16} className="text-black" />
+          <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" />
           Play
         </button>
         <button className="banner-btn bg-[gray]/70">
-          More Info <HiInformationCircle size={20} />
+          More Info <HiInformationCircle className="h-5 w-5 md:h-8 md:w-8" />
         </button>
       </section>
     </div>

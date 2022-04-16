@@ -1,6 +1,5 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Banner, Header } from '../components'
+import { Banner, Header, MovieRow } from '../components'
 import { Movie } from '../typings'
 import { requests } from '../utils/requests'
 
@@ -26,7 +25,7 @@ const Home = ({
   documentaries,
 }: Props) => {
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
+    <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
         <title>Netflix Redesigned</title>
         <link rel="icon" href="/favicon.ico" />
@@ -36,13 +35,14 @@ const Home = ({
 
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section>
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
+        <section className="md:space-y-24">
+          <MovieRow title="Trending Now" movies={trendingNow} />
+          <MovieRow title="Top Rated" movies={topRated} />
+          <MovieRow title="Action Thrillers" movies={actionMovies} />
+          <MovieRow title="Comedies" movies={comedyMovies} />
+          <MovieRow title="Scary Movies" movies={horrorMovies} />
+          <MovieRow title="Romance Movies" movies={romanceMovies} />
+          <MovieRow title="Documentaries" movies={documentaries} />
         </section>
       </main>
 
