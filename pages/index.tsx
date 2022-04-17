@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import { Banner, Header, MovieRow } from '../components'
+import { Banner, Header, Modal, MovieRow, Spinner } from '../components'
+import useAuth from '../hooks/useAuth'
+import useModal from '../hooks/useModal'
 import { Movie } from '../typings'
 import { requests } from '../utils/requests'
 
@@ -24,7 +26,10 @@ const Home = ({
   romanceMovies,
   documentaries,
 }: Props) => {
-  return (
+  const { loading } = useAuth()
+  const { show } = useModal()
+
+  return !loading ? (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
         <title>Netflix Redesigned</title>
@@ -46,8 +51,10 @@ const Home = ({
         </section>
       </main>
 
-      {/* Modal */}
+      {show && <Modal />}
     </div>
+  ) : (
+    <Spinner />
   )
 }
 
