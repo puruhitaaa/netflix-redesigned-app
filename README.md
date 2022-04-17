@@ -5,7 +5,7 @@ A Netflix-like app made with TypeScript React, Tailwind CSS, Material UI, Fireba
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/4Kwq1NG/screencapture-netflix-redesigned-app-vercel-app-2022-04-17-18-20-01.png)
+![App Screenshot](https://i.ibb.co/pxkL60J/screencapture-netflix-redesigned-app-vercel-app-2022-04-17-18-20-01-min.png)
 
 ## Run Locally
 
